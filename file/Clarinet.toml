@@ -1,0 +1,26 @@
+[project]
+name = "time-locked-savings"
+authors = []
+description = "Time-Locked Savings Account on Stacks Blockchain"
+telemetry = false
+requirements = []
+cache_dir = ".cache"
+boot_contracts = ["pox", "costs-v2", "bns"]
+
+[contracts.time-locked-savings]
+path = "contracts/time-locked-savings.clar"
+clarity_version = 2
+epoch = 2.4
+
+[repl]
+costs_version = 2
+parser_version = 2
+
+[repl.analysis]
+passes = ["check_checker"]
+
+[repl.analysis.check_checker]
+strict = true
+trusted_sender = false
+trusted_caller = false
+callee_filter = false
